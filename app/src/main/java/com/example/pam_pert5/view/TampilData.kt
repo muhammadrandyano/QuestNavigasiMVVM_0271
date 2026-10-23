@@ -18,5 +18,27 @@ fun TampilData(
     alamat: String,
     onBackBtnClick: () -> Unit
 ) {
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(16.dp)
+    ) {
+        Text(text = "Halaman Detail / Tampil Data")
 
+        Spacer(modifier = Modifier.height(20.dp))
+
+        // Menampilkan data yang dikirim
+        Text(text = "Nama: $nama")
+        Text(text = "Jenis Kelamin: $jenisKelamin")
+        Text(text = "Alamat: $alamat")
+
+        Spacer(modifier = Modifier.height(20.dp))
+
+        // Tombol kembali
+        Button(
+            onClick = onBackBtnClick,
+        ) {
+            Text(text = "Kembali ke Form")
+        }
+    }
 }
