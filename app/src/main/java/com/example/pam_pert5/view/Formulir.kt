@@ -29,3 +29,38 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.example.pam_pert5.R
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun FormIsian(
+    jenisK: List<String> = listOf("Laki-laki", "Perempuan"),
+    // Nama parameter disamakan dengan yang ada di Navigasi.kt (huruf o kecil)
+    onSubmitBtnClick: (List<String>) -> Unit = {}
+) {
+    // State untuk menyimpan inputan
+    var txtNama by rememberSaveable { mutableStateOf("") }
+    var txtJK by rememberSaveable { mutableStateOf("") }
+    var txtAlamat by rememberSaveable { mutableStateOf("") }
+
+    Scaffold(
+        modifier = Modifier,
+        topBar = {
+            TopAppBar(
+                title = { Text(stringResource(id = R.string.home), color = Color.White) },
+                colors = TopAppBarDefaults.topAppBarColors(
+                    containerColor = colorResource(id = R.color.teal_700),
+                ),
+            )
+        },
+    ) { isiRuang ->
+        Column(
+            modifier = Modifier
+                .padding(isiRuang)
+                .fillMaxWidth(),
+            verticalArrangement = Arrangement.Top,
+            horizontalAlignment = Alignment.CenterHorizontally,
+        ) {
+
+        }
+    }
+}
