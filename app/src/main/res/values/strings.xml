@@ -1,1 +1,10 @@
-<resources></resources>
+<resources>
+    <string name="app_name">PAM_Pert5</string>
+    <string name="submit">Submit</string>
+    <string name="back">Back</string>
+    <string name="nama_lengkap">NAMA LENGKAP</string>
+    <string name="jenis_kelamin">JENIS KELAMINBack</string>
+    <string name="alamat">ALAMAT</string>
+    <string name="tampil">TAMPILAN DATA</string>
+    <string name="home">Form Isian</string>
+</resources>
