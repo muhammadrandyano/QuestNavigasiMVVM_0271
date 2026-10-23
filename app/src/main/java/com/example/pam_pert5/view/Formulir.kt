@@ -60,7 +60,24 @@ fun FormIsian(
             verticalArrangement = Arrangement.Top,
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
+            // Input Nama
+            OutlinedTextField(
+                value = txtNama,
+                onValueChange = { txtNama = it },
+                singleLine = true,
+                label = { Text(text = stringResource(id = R.string.nama_lengkap)) },
+                modifier = Modifier
+                    .padding(top = 20.dp)
+                    .width(250.dp),
+            )
 
+            HorizontalDivider(
+                modifier = Modifier
+                    .padding(20.dp)
+                    .width(250.dp),
+                thickness = 1.dp,
+                color = Color.Red,
+            )
         }
     }
 }
