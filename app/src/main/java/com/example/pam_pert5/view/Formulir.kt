@@ -99,6 +99,28 @@ fun FormIsian(
                 thickness = 1.dp,
                 color = Color.Red,
             )
+
+            // Input Alamat
+            OutlinedTextField(
+                value = txtAlamat,
+                onValueChange = { txtAlamat = it },
+                singleLine = true,
+                modifier = Modifier.width(250.dp),
+                label = { Text(text = stringResource(id = R.string.alamat)) },
+            )
+
+            Spacer(modifier = Modifier.height(20.dp))
+
+            // Tombol Submit
+            Button(
+                modifier = Modifier.padding(all = 25.dp),
+                onClick = {
+                    // Mengirim data list ke MainActivity
+                    onSubmitBtnClick(listOf(txtNama, txtJK, txtAlamat))
+                },
+            ) {
+                Text(text = stringResource(id = R.string.submit))
+            }
         }
     }
 }
