@@ -39,6 +39,21 @@ fun DataApp(
                     }
                 )
             }
+
+            // Menambahkan argumen pada rute Detail
+            composable(
+                route = "${Navigasi.Detail.name}/{nama}/{jk}/{alamat}",
+                arguments = listOf(
+                    navArgument("nama") { type = NavType.StringType },
+                    navArgument("jk") { type = NavType.StringType },
+                    navArgument("alamat") { type = NavType.StringType }
+                )
+            ) { backStackEntry ->
+                // Mengambil data dari URL navigasi
+                val nama = backStackEntry.arguments?.getString("nama") ?: ""
+                val jk = backStackEntry.arguments?.getString("jk") ?: ""
+                val alamat = backStackEntry.arguments?.getString("alamat") ?: ""
+            }
         }
     }
 }
