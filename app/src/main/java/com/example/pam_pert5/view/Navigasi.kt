@@ -15,3 +15,30 @@ enum class Navigasi {
     FormulirSaya,
     Detail
 }
+
+@Composable
+fun DataApp(
+    navController: NavHostController = rememberNavController()
+) {
+    Scaffold { isiRuang ->
+        NavHost(
+            navController = navController,
+            startDestination = Navigasi.FormulirSaya.name,
+            modifier = Modifier.padding(isiRuang)
+        ) {
+            composable(route = Navigasi.FormulirSaya.name) {
+                FormIsian(
+                    onSubmitBtnClick = { data ->
+                        // data[0] = Nama, data[1] = JK, data[2] = Alamat
+                        // Kita buat rute dengan parameter, contoh: Detail/Muhammad/Laki-laki/Jambi
+                        val nama = data.getOrNull(0) ?: ""
+                        val jk = data.getOrNull(1) ?: ""
+                        val alamat = data.getOrNull(2) ?: ""
+
+                        navController.navigate("${Navigasi.Detail.name}/$nama/$jk/$alamat")
+                    }
+                )
+            }
+        }
+    }
+}
