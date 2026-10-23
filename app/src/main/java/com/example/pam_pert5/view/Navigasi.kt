@@ -53,7 +53,25 @@ fun DataApp(
                 val nama = backStackEntry.arguments?.getString("nama") ?: ""
                 val jk = backStackEntry.arguments?.getString("jk") ?: ""
                 val alamat = backStackEntry.arguments?.getString("alamat") ?: ""
+
+                TampilData(
+                    nama = nama,
+                    jenisKelamin = jk,
+                    alamat = alamat,
+                    onBackBtnClick = {
+                        cancelAndBackToFormulirSaya(navController)
+                    }
+                )
             }
         }
     }
+}
+
+private fun cancelAndBackToFormulirSaya(
+    navController: NavHostController
+) {
+    navController.popBackStack(
+        Navigasi.FormulirSaya.name,
+        inclusive = false
+    )
 }
